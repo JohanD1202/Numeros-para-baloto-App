@@ -2,20 +2,20 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:numeros_para_baloto_app/presentation/screens/menu_screen.dart';
-import 'package:numeros_para_baloto_app/presentation/shared/balotas.dart';
-import 'package:numeros_para_baloto_app/presentation/shared/tutorial.dart';
+import 'package:numeros_para_baloto_app/presentation/shared/balotas_miloto.dart';
+import 'package:numeros_para_baloto_app/presentation/shared/tutorial2.dart';
 
-class RevanchaScreen extends StatefulWidget {
-  static const name = 'revancha-screen';
-  const RevanchaScreen({super.key});
+class MilotoScreen extends StatefulWidget {
+  static const name = 'miloto-screen';
+  const MilotoScreen({super.key});
 
   @override
-  State<RevanchaScreen> createState() => _RevanchaScreenState();
+  State<MilotoScreen> createState() => _MilotoScreenState();
 }
 
-class _RevanchaScreenState extends State<RevanchaScreen> {
-
+class _MilotoScreenState extends State<MilotoScreen> {
    late InterstitialAd _interstitialAd;
+
   bool _isAdLoaded = false;
 
   @override
@@ -70,13 +70,12 @@ class _RevanchaScreenState extends State<RevanchaScreen> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(leading: const LeadingCustom(),),
-      body:  SizedBox(
+      body: SizedBox(
         height: size.height * 1,
         width: size.width * 1,
         child: Stack(
@@ -88,13 +87,13 @@ class _RevanchaScreenState extends State<RevanchaScreen> {
                 Pulse(
                   infinite: true,
                   delay: const Duration(seconds: 1),
-                  child: Image.asset('assets/revancha.png', width: 200)
+                  child:  Image.asset('assets/miloto.png', width: 200,)
                 ),
-                const SizedBox(height: 50),
-                const Balotas(),
+                const SizedBox(height: 60),
+                const BalotasMiLoto(),
               ],
             ),
-            const AppTutorialScreen()
+            const AppTutorialScreen2()
           ],
         ),
       ),
